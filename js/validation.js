@@ -43,20 +43,3 @@ else{
 }
 }
 
-function zipCheck(zipInput){
-
-    if (zipInput.value == ""){
-        zipInput.setCustomValidity("Zip Code required");
-    }
-
-   if(Number(zipInput.value) !== NaN && zipInput.value.toString().length == 5){
-        zipInput.setCustomValidity('');
-    }
-
-   else {
-       zipInput.setCustomValidity("Invalid Zip Code!");
-   }
-    return true;
-}
-
-
