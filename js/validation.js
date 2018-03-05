@@ -20,4 +20,36 @@ else{
 }
 }
 
+function fPassFunction() {
+
+var recoveryEmail = document.getElementById("recoveryEmailInput").value;
+
+if(recoveryEmail == null || recoveryEmail == "")
+    {
+        alert("Please Enter Valid Email");
+        return false;
+    }
+else{
+    document.getElementById("myfPassLabel").innerHTML = "A recovery link is sent to: " + recoveryEmail;
+    document.getElementById("recoveryEmailInput").value = "";
+    return false;
+}
+}
+
+function zipCheck(zipInput){
+
+    if (zipInput.value == ""){
+        zipInput.setCustomValidity("Zip Code required");
+    }
+
+   if(Number(zipInput.value) !== NaN && zipInput.value.toString().length == 5){
+        zipInput.setCustomValidity('');
+    }
+
+   else {
+       zipInput.setCustomValidity("Invalid Zip Code!");
+   }
+    return true;
+}
+
 

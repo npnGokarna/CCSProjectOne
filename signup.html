@@ -16,11 +16,11 @@
          <div class="form-row">
             <div class="form-group col-md-5">
               <label for="firstNameInput">First Name</label>
-              <input type="text" class="form-control" id="firstNameInput" placeholder="First Name">
+              <input type="text" class="form-control" id="firstNameInput" placeholder="First Name" required>
             </div>
             <div class="form-group col-md-5">
               <label for="lastNameInput">Last Name</label>
-              <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name">
+              <input type="text" class="form-control" id="lastNameInput" placeholder="Last Name" required>
             </div>
             <div class="form-group col-md-2">
                 <label for="suffixInput">Suffix</label>
@@ -35,52 +35,46 @@
           <div class="form-row">
             <div class="form-group col-md-4">
               <label for="emailInput">Email</label>
-              <input type="email" class="form-control" id="emailInput" placeholder="Email">
+              <input type="email" class="form-control" id="emailInput" placeholder="Email" required>
             </div>
             <div class="form-group col-md-4">
               <label for="passwordInput">Password</label>
-              <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+              <input type="password" class="form-control" id="passwordInput" placeholder="Password" required>
             </div>
             <div class="form-group col-md-4">
               <label for="confirmPasswordInput">Confirm Password</label>
-              <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirm Password">
+              <input type="password" class="form-control" id="confirmPasswordInput" placeholder="Confirm Password" required>
             </div>
           </div>
 
 
-
-
-          <div class="form-row" style="padding-bottom: 2%">
-            <legend class="col-form-label">Gender</legend>
-                <div class="form-check" style="padding-left: 2.5%">
-                  <input class="form-check-input" type="radio" name="gridRadio" id="gridRadio1" value="option1">
-                  <label class="form-check-label" for="gridRadio1">
-                    Male
-                  </label>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+            <label for="genderInput">Gender</label>
+                <div>
+                    <label class="radio-inline" style="padding-right: 2%">
+                        <input type="radio" name="optradio" required> Male
+                    </label>
+                    <label class="radio-inline" style="padding-right: 2%">
+                      <input type="radio" name="optradio"> Female
+                    </label>
+                    <label class="radio-inline" style="padding-right: 2%">
+                      <input type="radio" name="optradio"> Other
+                    </label>
+                    <label class="radio-inline" style="padding-right: 2%">
+                      <input type="radio" name="optradio"> Opt Not to Say
+                    </label>
                 </div>
-                <div class="form-check" style="padding-left: 3%">
-                  <input class="form-check-input" type="radio" name="gridRadio" id="gridRadio2" value="option2">
-                  <label class="form-check-label" for="gridRadio2">
-                    Female
-                  </label>
-                </div>
-                <div class="form-check" style="padding-left: 3%">
-                  <input class="form-check-input" type="radio" name="gridRadio" id="gridRadio3" value="option3">
-                  <label class="form-check-label" for="gridRadio3">
-                    Other
-                  </label>
-                </div>
-                <div class="form-check" style="padding-left: 3%">
-                  <input class="form-check-input" type="radio" name="gridRadio" id="gridRadio4" value="option4" checked>
-                  <label class="form-check-label" for="gridRadio4">
-                    Opt Not to say
-                  </label>
-                </div>
+            </div>
+            <div class="form-group col-md-8">
+              <label for="phoneInput">Phone Number (10 Digits Only)</label>
+              <input type="tel" class="form-control" id="phoneNumberInput" placeholder="(XXX)-XXX-XXXX" pattern="^\d{3}\d{3}\d{4}$" required>
+            </div>
           </div>
 
           <div class="form-group">
             <label for="addressInput">Address</label>
-            <input type="text" class="form-control" id="addressInput" placeholder="1234 Main St">
+            <input type="text" class="form-control" id="addressInput" placeholder="1234 Main St" required>
           </div>
           <div class="form-group">
             <label for="addressInput2">Address 2</label>
@@ -89,27 +83,59 @@
           <div class="form-row">
             <div class="form-group col-md-6">
               <label for="cityInput">City</label>
-              <input type="text" class="form-control" id="cityInput">
+              <input type="text" class="form-control" id="cityInput" placeholder="City" required>
             </div>
             <div class="form-group col-md-4">
               <label for="stateInput">State</label>
-              <select id="stateInput" class="form-control">
-                <option selected>Choose...</option>
-                <option>CA</option>
-                <option>NY</option>
-                <option>OR</option>
-                <option>TX</option>
-                <option>WA</option>
+              <select id="stateInput" class="form-control" required>
+                <option selected value="">Choose...</option>
+                <option value="CA">CA</option>
+                <option value="NY">NY</option>
+                <option value="OR">OR</option>
+                <option value="TX">TX</option>
+                <option value="WA">WA</option>
               </select>
             </div>
             <div class="form-group col-md-2">
               <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" id="zipInput">
+              <input type="text" class="form-control" id="zipInput" oninvalid="zipCheck(this);" oninput="zipCheck(this);" placeholder="XXXXX" required>
             </div>
           </div>
+
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="degreeInput">Degree (Select All That Applies)</label>
+
+                <div>
+                    <label class="custom-checkbox" style="padding-right: 2%">
+                        <input type=checkbox name="degreeCheck"> High School
+                    </label>
+                    <label class="custom-checkbox" style="padding-right: 2%">
+                        <input type=checkbox name="degreeCheck"> B.S.
+                    </label>
+                    <label class="custom-checkbox" style="padding-right: 2%">
+                        <input type=checkbox name="degreeCheck"> M.S.
+                    </label>
+                    <label class="custom-checkbox" style="padding-right: 2%">
+                        <input type=checkbox name="degreeCheck"> Ph.D.
+                    </label>
+                </div>
+            </div>
+           </div>
+
+           <div class="form-row">
+            <div class="form-group col-md-12">
+              <label for="professionalHistoryInput">Professional History</label>
+                <div>
+                <textarea name="professionalHistoryInput" id="professionalHistoryInput" cols="30" rows="10" placeholder="Where did you work before?" style="width: 100%;"></textarea>
+                </div>
+            </div>
+           </div>
+
+
           <div class="form-group">
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <input class="form-check-input" type="checkbox" id="gridCheck" required>
               <label class="form-check-label" for="gridCheck">
                 Agree Terms and Conditions!
               </label>
@@ -124,6 +150,7 @@
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src ="js/script.js"></script>
+    <script src="js/validation.js"></script>
     </body>
 
 
