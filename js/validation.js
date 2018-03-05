@@ -16,7 +16,6 @@ else{
     document.getElementById("myLabel").innerHTML = email+" is now Logged In";
     document.getElementById("emailInput").value = "";
     document.getElementById("passwordInput").value = "";
-
     return false;
 }
 }
