@@ -19,6 +19,13 @@ else{
     return false;
 }
 }
+function signup() {
+
+    var fName = document.getElementById("firstNameInput").value;
+    var lName = document.getElementById("lastNameInput").value;;
+    alert("Congratulations!! User "+fName+" "+lName+" has been successfully registered!!");
+
+}
 
 function fPassFunction() {
 
